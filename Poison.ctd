@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Poison" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1650968931" ts_lastsave="1650968936">
+    <node name="enum" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1650968936" ts_lastsave="1650968963">
+      <node name="nmap" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1650968949" ts_lastsave="1650968951">
+        <rich_text>gives 22 and 80</rich_text>
+      </node>
+      <node name="web" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1650968963" ts_lastsave="1650969301">
+        <rich_text>gets password with listfiles.php
+use  base64 -d 13 times to get the password
+use the file explorer to get /etc/passwd file toghet the user name
+
+without using the password file from web we can obtain a revrese shell using php log poisoning
+use &lt;?php system($_GET['c']); ?&gt; as user agent to RCE
+within next web invocation, use ‘c’ as command to run
+
+</rich_text>
+        <rich_text justification="left" link="webs http://10.10.10.84/browse.php?file=/var/log/httpd-access.log&amp;c=id" scale="h3" background="#505050" foreground="#e9e9e9">http://10.10.10.84/browse.php?file=/var/log/httpd-access.log&amp;c=id</rich_text>
+        <rich_text>
+
+instead of c=id, we can use a netcat reverse shell code and obtain reverse shell
+
+password file will be in home directory
+
+use ssh to login as charix
+
+home directory contains a passsword protected zip file which can be extracted charix password
+
+
+ps -auxw will display a vnc process as root
+
+use ssh tunneling to connect to this vnc process via charix shell and get root flag
+
+
+
+
+</rich_text>
+      </node>
+    </node>
+  </node>
+</cherrytree>
